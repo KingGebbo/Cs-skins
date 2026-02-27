@@ -2,16 +2,18 @@
   "name": "cs2-pump-detection",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "build": "npm run build:backend && npm run build:frontend",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  "dependencies": {
+    "@vercel/postgres": "^0.8.0",
+    "axios": "^1.6.8"
   },
   "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
     "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "build:frontend": "cd frontend && npm install && npm run build"
   }
 }
